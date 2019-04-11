@@ -3,7 +3,6 @@ import 'package:flutter_experiment/resources/AppColors.dart';
 import 'package:flutter_experiment/list/children/ListChildPage.dart';
 
 class ListPage extends StatelessWidget {
-
   Widget _tabBarContainer;
 
   List<Tab> _listTab = <Tab>[
@@ -38,9 +37,9 @@ class ListPage extends StatelessWidget {
           new Container(
             constraints: new BoxConstraints.expand(
               height:
-                  Theme.of(context).textTheme.display1.fontSize * 1.1 + 10.0,
+                  Theme.of(context).textTheme.display1.fontSize * 1.1 + 20.0,
             ),
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             color: AppColors.color_a0522d,
             child: _tabBarContainer,
           ),
