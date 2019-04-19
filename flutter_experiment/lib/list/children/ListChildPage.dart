@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_experiment/list/children/ListChildModeOne.dart';
+import 'package:flutter_experiment/list/children/ListChildModeTwo.dart';
 
 class ListChildPage extends StatelessWidget {
   @override
@@ -14,6 +15,15 @@ class ListChildPage extends StatelessWidget {
                 context,
                 new MaterialPageRoute(
                     builder: (context) => new ListChildModeOne()));
+          },
+        ),
+        OutlineButton(
+          child: Text('ModeTwo'),
+          onPressed: () {
+            Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => new ListChildModeTwo()));
           },
         ),
       ],
