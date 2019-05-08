@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_experiment/resources/AppColors.dart';
 import 'package:flutter_experiment/home/HomePage.dart';
 import 'package:flutter_experiment/list/ListPage.dart';
-
+import 'package:flutter_experiment/function/FunctionPage.dart';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -15,7 +15,7 @@ class MainPageRealization extends State<MainPage> {
   Map _bottomMap = {
     "首页": Icon(Icons.home),
     "列表": Icon(Icons.list),
-    "动画": Icon(Icons.apps)
+    "功能": Icon(Icons.apps)
   };
 
   int _index = 0;
@@ -49,7 +49,7 @@ class MainPageRealization extends State<MainPage> {
           case 1:
             return ListPage();
           case 2:
-            return HomePage();
+            return FunctionPage();
         }
       }(),
     );
