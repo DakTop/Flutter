@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_experiment/function/async/IsolateExp.dart';
+import 'package:flutter_experiment/function/http/HttpExp.dart';
 import 'package:flutter_experiment/resources/AppColors.dart';
-import 'package:flutter_experiment/list/children/ListChildPage.dart';
-import 'package:flutter_experiment/function/async/Async.dart';
 /**
  * 功能页面
  */
@@ -27,8 +27,8 @@ class _FunctionPageState extends State<FunctionPage> {
     super.initState();
     //初始化内容页
     _listContentView = <Widget>[
-      new AsyncPage(),
-      new ListChildPage(),
+      new IsolateExperiment(),
+      new HttpPage(),
     ];
     //初始化tab列表
     _listTab = <Tab>[
