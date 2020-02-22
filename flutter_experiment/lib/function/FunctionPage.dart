@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_experiment/function/async/IsolateExp.dart';
 import 'package:flutter_experiment/function/http/HttpExp.dart';
+import 'package:flutter_experiment/function/stream/StreamExp.dart';
 import 'package:flutter_experiment/resources/AppColors.dart';
+
 /**
  * 功能页面
  */
@@ -29,6 +31,7 @@ class _FunctionPageState extends State<FunctionPage> {
     _listContentView = <Widget>[
       new IsolateExperiment(),
       new HttpPage(),
+      new StreamPage(),
     ];
     //初始化tab列表
     _listTab = <Tab>[
@@ -37,6 +40,9 @@ class _FunctionPageState extends State<FunctionPage> {
       ),
       new Tab(
         text: "网络请求",
+      ),
+      new Tab(
+        text: "Stream流",
       ),
     ];
     //初始化TabController

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_experiment/list/children/CustomListWithHead.dart';
 import 'package:flutter_experiment/resources/AppColors.dart';
 import 'package:flutter_experiment/list/children/ListChildPage.dart';
 
@@ -27,7 +28,7 @@ class _ListPageState extends State<ListPage> {
       new ListChildPage(),
       new ListChildPage(),
       new ListChildPage(),
-      new ListChildPage()
+      new ActPage()
     ];
     //初始化tab列表
     _listTab = <Tab>[

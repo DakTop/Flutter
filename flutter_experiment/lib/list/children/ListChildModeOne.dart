@@ -24,27 +24,70 @@ class ListChildModeOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      color: AppColors.color_00ffffff,
-      child: ListView(
-        scrollDirection: Axis.vertical, //滚动方向
-        itemExtent: 100.0, //每一个item的高，如果不设置则依赖子控件的高度
-        children: _listText.map((String text) {
-          return MaterialButton(
-            child: Text(
-              text,
-              style: TextStyle(
-                color: AppColors.color_3b3b3b,
-                fontSize: 30.0,
-                decoration: TextDecoration.none, //去掉下划线
-              ),
-            ),
-            onPressed: () {
-              ToastHelper.showToast(text);
-            },
-          );
-        }).toList(),
+    return Scaffold(
+      body: Container(
+        color: AppColors.color_ffffff,
+        child: ListView.builder(
+//          shrinkWrap: true,
+//        itemExtent: 100,
+          scrollDirection: Axis.vertical,
+          //滚动方向
+          //每一个item的高，如果不设置则依赖子控件的高度
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Column(
+              children: <Widget>[
+                obtainItem("dsf"),
+                Expanded(
+                  child: Container(
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3, childAspectRatio: 1),
+                      physics: new NeverScrollableScrollPhysics(),
+                      primary: false,
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      itemBuilder: (BuildContext c, int index) {
+                        return obtainGItem("ds");
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
+    );
+  }
+
+  Widget obtainItem(String v) {
+    return Container(
+      child: MaterialButton(
+        child: Text(
+          v,
+          style: TextStyle(
+            color: AppColors.color_3b3b3b,
+            fontSize: 30.0,
+            decoration: TextDecoration.none, //去掉下划线
+          ),
+        ),
+        onPressed: () {},
+      ),
+    );
+  }
+
+  Widget obtainGItem(String v) {
+    return MaterialButton(
+      child: Text(
+        v,
+        style: TextStyle(
+          color: AppColors.color_3b3b3b,
+          fontSize: 30.0,
+          decoration: TextDecoration.none, //去掉下划线
+        ),
+      ),
+      onPressed: () {},
     );
   }
 }
